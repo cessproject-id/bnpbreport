@@ -166,7 +166,7 @@ for kat in kategori_utama:
 
 for kat, wilayah_list in dinamika_cuaca.items():
     if kat not in kategori_utama and wilayah_list:
-        baris_dinamika.append(f"🔸{kat} : {', '.join(wilayah_list)}")
+        baris_dinamika.append(f"🔸 {kat} : {', '.join(wilayah_list)}")
 
 dinamika_str = "\n".join(baris_dinamika)
 
@@ -196,8 +196,8 @@ NIHIL (Kondisi Wilayah Aman dan Terkendali)
 ▪️ Administrasi & Logistik: Pengolahan data kebencanaan dan pemeliharaan/pengecekan kesiapan peralatan PB.
 
 4. PETUGAS
-▪️  Supervisor: M. Sandy. SE
-▪️  Tim Operator: Melkianus Giay. ST, Sultan K. Pitang, Albert F. Unane, Bambang Ayomi
+▪️ Supervisor: M. Sandy. SE
+▪️ Tim Operator: Melkianus Giay. ST, Sultan K. Pitang, Albert F. Unane, Bambang Ayomi
 
 Demikian laporan disampaikan. Pemantauan terus dilakukan dan perkembangan lebih lanjut akan dilaporkan pada kesempatan pertama.
 
