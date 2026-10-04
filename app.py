@@ -39,7 +39,7 @@ nama_hari = HARI.get(now_wit.strftime("%A"), now_wit.strftime("%A"))
 nama_bulan = BULAN.get(now_wit.month, "")
 waktu_teks = f"{nama_hari}, {now_wit.day} {nama_bulan} {now_wit.year} | {now_wit.strftime('%H.%M')} WIT"
 
-st.title("🛡️ Generator Laporan Periodik PUSDALOPS PB PAPUA")
+st.title("🛡️ Generator Laporan Periodik PUSDALOPS PB BPBD PAPUA")
 col1, col2 = st.columns([3, 1])
 with col1:
     st.caption(f"🕒 Waktu Pemantauan Otomatis: **{waktu_teks}**")
