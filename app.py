@@ -39,7 +39,7 @@ nama_hari = HARI.get(now_wit.strftime("%A"), now_wit.strftime("%A"))
 nama_bulan = BULAN.get(now_wit.month, "")
 waktu_teks = f"{nama_hari}, {now_wit.day} {nama_bulan} {now_wit.year} | {now_wit.strftime('%H.%M')} WIT"
 
-st.title("🛡️ Generator Laporan Piket PUSDALOPS PB PAPUA")
+st.title("🛡️ Generator Laporan Periodik PUSDALOPS PB PAPUA")
 col1, col2 = st.columns([3, 1])
 with col1:
     st.caption(f"🕒 Waktu Pemantauan Otomatis: **{waktu_teks}**")
@@ -187,7 +187,7 @@ NIHIL (Kondisi Wilayah Aman dan Terkendali)
 🔹 Kondisi Umum: {cuaca_jpr['kondisi']}
 🔹 Suhu: {cuaca_jpr['suhu']}°C | Kelembapan: {cuaca_jpr['kelembapan']}% | Kecepatan Angin: {cuaca_jpr['angin']}
 
-     Dinamika Cuaca Wilayah:
+   Dinamika Cuaca Wilayah:
 {dinamika_str}
 
 3. KEGIATAN OPERASIONAL PUSDALOPS :
