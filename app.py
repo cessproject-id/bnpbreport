@@ -171,7 +171,7 @@ for kat, wilayah_list in dinamika_cuaca.items():
 dinamika_str = "\n".join(baris_dinamika)
 
 # 5. TEMPLATE LAPORAN
-laporan_final_text = f"""LAPORAN PERIODIK PUSDALOPS PB PROVINSI PAPUA
+laporan_final_text = f"""LAPORAN PERIODIK PUSDALOPS PB BPBD PROVINSI PAPUA
 Waktu Pemantauan: {waktu_teks}
 
 Kepada Yth:
@@ -201,7 +201,7 @@ NIHIL (Kondisi Wilayah Aman dan Terkendali)
 
 Demikian laporan disampaikan. Pemantauan terus dilakukan dan perkembangan lebih lanjut akan dilaporkan pada kesempatan pertama.
 
-PUSDALOPS BPBD PROVINSI PAPUA
+PUSDALOPS PB BPBD PROVINSI PAPUA
 Kontak : +62 821-9041-100"""
 
 st.subheader("📝 Laporan Siap Kirim (Bisa Diedit)")
