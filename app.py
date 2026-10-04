@@ -2,6 +2,7 @@ from datetime import datetime, timedelta, timezone
 from bs4 import BeautifulSoup
 import requests
 import streamlit as st
+import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="PUSDALOPS PB PAPUA - Generator Laporan", layout="wide"
@@ -211,6 +212,43 @@ laporan_edit = st.text_area(
 
 st.subheader("📋 Salin Teks ke WhatsApp")
 st.code(laporan_edit, language="text")
+st.markdown("---")
+st.subheader("🖨️ Cetak / Unduh Laporan")
+
+col_btn1, col_btn2 = st.columns(2)
+
+with col_btn1:
+  # Tombol Print langsung via dialog cetak browser
+  if st.button("🖨️ Cetak Laporan (Print / Save as PDF)", use_container_width=True):
+    # Mengirim teks hasil editan ke pop-up print browser
+    escaped_text = laporan_edit.replace("\\", "\\\\").replace("`", "\\`")
+    print_script = f"""
+        <script>
+        var printWin = window.open('', '_blank', 'width=800,height=900');
+        printWin.document.write('<html><head><title>Laporan Pusdalops</title>');
+        printWin.document.write('<style>body{{font-family: Arial, sans-serif; white-space: pre-wrap; font-size: 13px; line-height: 1.5; padding: 25px;}}</style>');
+        printWin.document.write('</head><body>');
+        printWin.document.write(`{escaped_text}`);
+        printWin.document.write('</body></html>');
+        printWin.document.close();
+        printWin.focus();
+        printWin.print();
+        </script>
+        """
+    components.html(print_script, height=0)
+
+with col_btn2:
+  # Tombol Download file .txt sebagai arsip fisik
+  nama_file_laporan = (
+      f"Laporan_PUSDALOPS_{now_wit.strftime('%Y%m%d_%H%M')}.txt"
+  )
+  st.download_button(
+      label="📥 Unduh sebagai File Teks (.txt)",
+      data=laporan_edit,
+      file_name=nama_file_laporan,
+      mime="text/plain",
+      use_container_width=True,
+  )
 st.caption(
     "Klik icon 'Copy' di pojok kanan atas blok abu-abu ini untuk menyalin seluruh teks."
 )
