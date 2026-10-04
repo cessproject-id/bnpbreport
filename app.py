@@ -161,7 +161,7 @@ baris_dinamika = []
 for kat in kategori_utama:
     wilayah_list = dinamika_cuaca.get(kat, [])
     baris_dinamika.append(
-        f"🔸  {kat} : {', '.join(wilayah_list) if wilayah_list else '-'}"
+        f"🔸 {kat} : {', '.join(wilayah_list) if wilayah_list else '-'}"
     )
 
 for kat, wilayah_list in dinamika_cuaca.items():
